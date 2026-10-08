@@ -41,3 +41,4 @@ npx shadcn@latest init # 옵션 다 위(디폴트)
 pnpm dlx shadcn@latest add button input label card
 ```
 "# wbeframework-cilent-20262" 
+"# wbeframework-cilent-20262" 
