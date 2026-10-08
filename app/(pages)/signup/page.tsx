@@ -107,7 +107,7 @@ export default function SignUpPage() {
     }
 
     return (
-        <main className="flex min-h-screen items-center justify-center">
+        <main className="flex items-center justify-center">
 
             <Card className="w-full max-w-md">
                 <CardHeader>

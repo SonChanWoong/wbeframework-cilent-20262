@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import type { FormEvent } from "react"
 import { Button } from "@/components/ui/button"
@@ -16,6 +17,7 @@ type LoginResponse = {
 }
 
 export default function LoginPage() {
+  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
   const [loginToken, setLoginToken] = useState("")
@@ -52,6 +54,7 @@ export default function LoginPage() {
       const result: LoginResponse = await response.json()
       setLoginToken(result.accessToken)
       login()
+      router.push("/")
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : "로그인 중 오류가 발생했습니다.")
     } finally {

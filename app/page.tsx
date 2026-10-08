@@ -1,28 +1,14 @@
 "use client"
 
-import Link from "next/link"
-
-import { Button } from "@/components/ui/button"
-import { buttonVariants } from "@/components/ui/button"
 import { useAuthStore } from "@/providers/auth-store-providers"
 
 export default function Home() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
-  const logout = useAuthStore((state) => state.logout)
 
   return (
-    <main className="flex min-h-screen items-center justify-center gap-3">
-      {isAuthenticated ? (
-        <Button onClick={logout}>로그아웃</Button>
-      ) : (
-        <Link href="/login" className={buttonVariants({ variant: "outline" })}>
-          로그인
-        </Link>
-      )}
-
-      <Link href="/signup" className={buttonVariants()}>
-        회원가입
-      </Link>
-    </main>
+    <div className="space-y-3">
+      <h1 className="text-2xl font-bold">웹 프레임워크</h1>
+      <p>{isAuthenticated ? "로그인된 상태입니다." : "로그인이 필요합니다."}</p>
+    </div>
   )
 }

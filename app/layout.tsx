@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
 import { AuthStoreProvider } from "@/providers/auth-store-providers";
+import AppShell from "@/components/layout/AppShell";
 
 export const metadata: Metadata = {
   title: "웹 프레임워크 실습",
@@ -15,7 +16,7 @@ export default function RootLayout(
     <html lang="ko">
       <body>
         <AuthStoreProvider>
-          {children}
+          <AppShell>{children}</AppShell>
         </AuthStoreProvider>
       </body>
     </html>
