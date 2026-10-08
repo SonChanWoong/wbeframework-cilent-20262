@@ -42,3 +42,4 @@ pnpm dlx shadcn@latest add button input label card
 ```
 "# wbeframework-cilent-20262" 
 "# wbeframework-cilent-20262" 
+"# wbeframework-cilent-20262" 
